@@ -117,7 +117,7 @@ async def custom_site():
         # resolution of progress bar, recalculate since it may not be know yet.
         total = track.len or 10  # avoid div0
         slot = ux(.060)/ total # 60%
-        text = pygame.font.Font(None, 40).render('Loading...')
+        text = pygame.font.Font(None, 40).render('Loading...', True, 'White')
         rect = text.get_rect(center = screen.get_rect().center)
         screen.blit(text, rect)
         pygame.draw.rect(screen,(10,10,10),( marginx-ux(10), marginy-uy(10), (total*slot)+ux(20), uy(110) ) )
